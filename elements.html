@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function printForm() {
+            document.getElementById("result").innerHTML = "Thank you!";
+            document.getElementById("result").innerHTML = "Thank you!";
+            document.getElementById("companyValue").innerText = document.forms["sampleForm"]["company"].value;
+            document.getElementById("contactValue").innerText = document.forms["sampleForm"]["contact"].value;
+            document.getElementById("countryValue").innerText = document.forms["sampleForm"]["country"].value;
+            return false;
+        }
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Sample site
+    </h1>
+    <h2>Please fill form below to see the following table filled</h2>
+    <br />
+
+    <table>
+        <tr>
+            <th id="companyCN">Company</th>
+            <th id="contactCN">Contact</th>
+            <th id="countryCN">Country</th>
+        </tr>
+        <tr>
+            <td id="companyValue"></td>
+            <td id="contactValue"></td>
+            <td id="countryValue"></td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2>
+        This is sample form. Please Fill out the fiel bellow.
+    </h2>
+    <br />
+    <form name="sampleForm" onsubmit="return printForm()" method="post">
+        Company
+        <br />
+        <input type="text" name="company">
+        <br />
+        <br />
+        Contact
+        <br />
+        <input type="text" name="contact">
+        <br />
+        <br />
+        Country
+        <br />
+        <select name="country">
+            <option value="">--Select--</option>
+            <option value="USA">USA</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="Germany">Germany</option>
+        </select>
+        <br /><br />
+        <input type="submit" value="Submit" name="submitBtn">
+        <br />
+        <br />
+        <div id="result"></div>
+    </form>
+</body>
+</html>

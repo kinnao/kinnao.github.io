@@ -1,10 +1,37 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script>
+        function validateForm() {
+            var x = document.forms["sampleForm"]["fullname"].value;
+            if (x == "") {
+                document.getElementById("result").innerHTML = "Name must be filled out!";
+                return false;
+            }
+            document.getElementById("result").innerHTML = "Thank you!";
+            return false;
+        }
+    </script>
 </head>
 <body>
     <h1>
         Sample site
     </h1>
+    <br />
+    <div>
+        This is sample form. Please Fill out the fiel bellow.
+    </div>
+    <br />
+    <form name="sampleForm" onsubmit="return validateForm()" method="post">
+        Full name: <input type="text" name="fullname">
+        <br />
+        <input type="submit" value="Submit" name="submitBtn">
+        <br />
+        <br />
+        <div id="result"></div>
+    </form>
+    <br />
+    <br />
+    <a href="elements.html">Click here too open page with more html elements.</a>
 </body>
 </html>
